@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Api\ProjectController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('/v1') -> group(function() {
+
+    /* Route::get('/test-api', [ProjectController :: class, 'testApi'])
+    -> name('test.api'); */
+
+    Route::get('/projects-index', [ProjectController :: class, 'projectIndex'])
+    -> name('project.index');
 });
+
