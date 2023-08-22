@@ -15,11 +15,20 @@ class ProjectController extends Controller
         ]);
     } */
 
-    public function projectIndex() {
+    public function projectsIndex() {
 
         $projects = Project::with('type', 'user') -> get();
         return response()->json([
             'projects' => $projects
         ]);
+    }
+
+    public function projectDetails($id) {
+
+        $project = Project :: findOrFail($id);
+        return response()->json([
+            'project' => $project
+        ]);
+
     }
 }

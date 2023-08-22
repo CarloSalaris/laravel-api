@@ -21,7 +21,8 @@ Route::prefix('/v1') -> group(function() {
     /* Route::get('/test-api', [ProjectController :: class, 'testApi'])
     -> name('test.api'); */
 
-    Route::get('/projects-index', [ProjectController :: class, 'projectIndex'])
-    -> name('project.index');
+    Route::get('/projects-index', [ProjectController :: class, 'projectsIndex']);
+
+    Route::get('/project/{id}', [ProjectController :: class, 'projectDetails']);
 });
 
