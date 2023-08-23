@@ -23,7 +23,7 @@ class ProjectController extends Controller
         ]);
     }
 
-    public function projectDetails($id) {
+    public function projectShow($id) {
 
         $project = Project :: findOrFail($id);
         return response()->json([

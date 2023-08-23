@@ -23,6 +23,6 @@ Route::prefix('/v1') -> group(function() {
 
     Route::get('/projects-index', [ProjectController :: class, 'projectsIndex']);
 
-    Route::get('/project/{id}', [ProjectController :: class, 'projectDetails']);
+    Route::get('/project/{id}', [ProjectController :: class, 'projectShow']);
 });
 
